@@ -5,7 +5,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AssemblyName>FleetingSeasons</AssemblyName>
     <Product>Fleeting Seasons</Product>
-    <Version>1.0.0</Version>
+    <Version>1.0.3</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -35,4 +35,20 @@
       <HintPath>$(GamePath)\Old Market Simulator_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
+
+  <PropertyGroup>
+    <WorkingDirectory>$(MSBuildThisFileDirectory)bin\$(Configuration)</WorkingDirectory>
+    <InstallFolder>$(WorkingDirectory)\$(MSBuildProjectName)</InstallFolder>
+  </PropertyGroup>
+  <Target Name="CopyArtifactsToInstallFolder" AfterTargets="Build">
+    <Copy SourceFiles="$(TargetPath)" DestinationFiles="$(InstallFolder)\BepInEx\plugins\$(MSBuildProjectName)\$(TargetFileName)" />
+    <Copy SourceFiles="$(ProjectDir)\icon.png" DestinationFiles="$(InstallFolder)\icon.png" />
+    <Copy SourceFiles="$(ProjectDir)\manifest.json" DestinationFiles="$(InstallFolder)\manifest.json" />
+    <Copy SourceFiles="$(ProjectDir)\README.md" DestinationFiles="$(InstallFolder)\README.md" />
+    <ZipDirectory SourceDirectory="$(InstallFolder)" DestinationFile="$(WorkingDirectory)\$(MSBuildProjectName).zip" />
+  </Target>
+  <Target Name="CompleteCleanup" AfterTargets="Clean">
+    <RemoveDir Directories="$(InstallFolder)" />
+    <Delete Files="$(WorkingDirectory)\$(MSBuildProjectName).zip" />
+  </Target>
 </Project>

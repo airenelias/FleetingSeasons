@@ -1,0 +1,9 @@
+{
+    "name": "RestockAnywhere",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/airenelias/OldMarketSimulatorMods",
+    "description": "Let cellar employees carry goods from anywhere on the map.",
+    "dependencies": [
+        "BepInEx-BepInExPack-5.4.2100"
+    ]
+}

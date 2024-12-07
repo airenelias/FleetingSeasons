@@ -1,0 +1,9 @@
+{
+  "name": "FleetingSeasons",
+  "version_number": "1.0.3",
+  "website_url": "https://github.com/airenelias/OldMarketSimulatorMods",
+  "description": "Progress through seasons two times faster.",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2100"
+  ]
+}
