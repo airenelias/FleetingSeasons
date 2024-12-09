@@ -48,6 +48,7 @@
     <Copy SourceFiles="$(ProjectDir)\icon.png" DestinationFiles="$(InstallFolder)\icon.png" />
     <Copy SourceFiles="$(ProjectDir)\manifest.json" DestinationFiles="$(InstallFolder)\manifest.json" />
     <Copy SourceFiles="$(ProjectDir)\README.md" DestinationFiles="$(InstallFolder)\README.md" />
+    <Copy SourceFiles="$(ProjectDir)\CHANGELOG.md" DestinationFiles="$(InstallFolder)\CHANGELOG.md" />
     <ZipDirectory SourceDirectory="$(InstallFolder)" DestinationFile="$(WorkingDirectory)\$(MSBuildProjectName).zip" />
   </Target>
   <Target Name="CompleteCleanup" AfterTargets="Clean">
