@@ -31,8 +31,13 @@ namespace FleetingSeasons
             DaysInSeason = (int)Math.Ceiling(DaysInSeason * SeasonLengthMultiplier.Value);
 
             harmony.PatchAll();
+            Logger.LogInfo("Plugin " + PluginInfo.PLUGIN_NAME + " is loaded!");
+        }
 
-            Logger.LogInfo("Plugin FleetingSeasons is loaded!");
+        private void OnDestroy()
+        {
+            harmony.UnpatchSelf();
+            Logger.LogInfo("Plugin " + PluginInfo.PLUGIN_NAME + " is unloaded!");
         }
     }
 }

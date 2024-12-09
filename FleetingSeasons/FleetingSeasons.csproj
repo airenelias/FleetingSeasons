@@ -5,7 +5,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AssemblyName>FleetingSeasons</AssemblyName>
     <Product>Fleeting Seasons</Product>
-    <Version>1.0.3</Version>
+    <Version>1.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -34,6 +34,9 @@
     <Reference Include="Unity.Netcode.Runtime">
       <HintPath>$(GamePath)\Old Market Simulator_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GamePath)\Old Market Simulator_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <PropertyGroup>
@@ -50,5 +53,8 @@
   <Target Name="CompleteCleanup" AfterTargets="Clean">
     <RemoveDir Directories="$(InstallFolder)" />
     <Delete Files="$(WorkingDirectory)\$(MSBuildProjectName).zip" />
+  </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;$(GamePath)\BepInEx\scripts\$(TargetFileName)&quot;&#xD;&#xA;copy /Y &quot;$(WorkingDirectory)\$(TargetName).pdb&quot; &quot;$(GamePath)\BepInEx\scripts\$(TargetName).pdb&quot;" />
   </Target>
 </Project>
