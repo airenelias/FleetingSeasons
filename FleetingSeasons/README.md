@@ -1,6 +1,6 @@
 # Fleeting Seasons
 ### ❄️🌱☀️🍂 Progress through seasons two times faster
-![Fleeting Seasons calendar screenshot](https://i.ibb.co/JFkX0Dd/fleetingseasonsss.png "Title")
+![Fleeting Seasons calendar screenshot](https://i.ibb.co/DVYbWwt/image.png "Title")
 ## Descrpition
 Shrink seasons from 28 days to 14 and compact all the holidays into two eventful weeks.  
 ## Configuraton

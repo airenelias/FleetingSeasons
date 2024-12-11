@@ -1,3 +1,5 @@
+### 1.1.3
+- Mod unloading bugfix
 ### 1.1.2
 - Employees using items on the shelves for restocking fix
 ### 1.1.1

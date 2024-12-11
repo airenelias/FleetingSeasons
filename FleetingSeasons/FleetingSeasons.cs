@@ -33,11 +33,5 @@ namespace FleetingSeasons
             harmony.PatchAll();
             Logger.LogInfo("Plugin " + PluginInfo.PLUGIN_NAME + " is loaded!");
         }
-
-        private void OnDestroy()
-        {
-            harmony.UnpatchSelf();
-            Logger.LogInfo("Plugin " + PluginInfo.PLUGIN_NAME + " is unloaded!");
-        }
     }
 }

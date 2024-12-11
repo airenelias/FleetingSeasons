@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <AssemblyName>RestockAnywhere</AssemblyName>
-    <Product>Restock Anywhere</Product>
-    <Version>1.1.3</Version>
+    <AssemblyName>FleetingSeasons</AssemblyName>
+    <Product>Fleeting Seasons</Product>
+    <Version>1.1.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -13,7 +13,7 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
-    <RootNamespace>RestockAnywhere</RootNamespace>
+    <RootNamespace>FleetingSeasons</RootNamespace>
     <GamePath>D:\Steam\steamapps\common\Old Market Simulator</GamePath>
   </PropertyGroup>
 
@@ -33,6 +33,9 @@
     </Reference>
     <Reference Include="Unity.Netcode.Runtime">
       <HintPath>$(GamePath)\Old Market Simulator_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GamePath)\Old Market Simulator_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
 
