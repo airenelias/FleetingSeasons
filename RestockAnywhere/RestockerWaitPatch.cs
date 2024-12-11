@@ -18,7 +18,7 @@ namespace RestockAnywhere
             {
                 RestockAnywhere.Logger.LogDebug("Found restock target '" + targetItem.itemSO.itemName + "' amount " + targetItem.amount.Value + " at " + targetItem.transform.position.ToString());
                 // get list of restock sources skip rotten items if condition met
-                List<Item> list = ((IEnumerable<Item>)UnityEngine.Object.FindObjectsOfType<Item>()).Where<Item>((Func<Item, bool>)(x => (UnityEngine.Object)x.itemSO == (UnityEngine.Object)targetItem.itemSO && (!RestockAnywhere.IgnoreRotten.Value || !x.IsExpired()) && x.amount.Value > 0 && !x.IsRestockSource())).OrderBy<Item, float>((Func<Item, float>)(go => Vector3.Distance(go.transform.position, ___rc.transform.position))).ToList<Item>();
+                List<Item> list = ((IEnumerable<Item>)UnityEngine.Object.FindObjectsOfType<Item>()).Where<Item>((Func<Item, bool>)(x => (UnityEngine.Object)x.itemSO == (UnityEngine.Object)targetItem.itemSO && !x.onStand.Value && (!RestockAnywhere.IgnoreRotten.Value || !x.IsExpired()) && x.amount.Value > 0 && !x.IsRestockSource())).OrderBy<Item, float>((Func<Item, float>)(go => Vector3.Distance(go.transform.position, ___rc.transform.position))).ToList<Item>();
                 if (list.Count > 0)
                 {
                     // look for items outside of cellar if condition met
