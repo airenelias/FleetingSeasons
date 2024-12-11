@@ -19,7 +19,7 @@ namespace RestockAnywhere
         {
             Logger = base.Logger;
 
-            PrioritizeClutter = Config.Bind("General", "Prioritize Clutter", false,
+            PrioritizeClutter = Config.Bind("General", "Prioritize Clutter", true,
                 "Make employees prefer goods outside of the cellar when restocking");
             IgnoreRotten = Config.Bind("General", "Ignore Rotten", false,
                 "Make employees ignore spoiled goods when restocking");

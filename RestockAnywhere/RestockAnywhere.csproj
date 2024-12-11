@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AssemblyName>RestockAnywhere</AssemblyName>
-    <Product>Fleeting Seasons</Product>
-    <Version>1.1.0</Version>
+    <Product>Restock Anywhere</Product>
+    <Version>1.1.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
